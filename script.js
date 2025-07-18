@@ -9,7 +9,7 @@ let currentPlaylistIndex = 0;
 
 // Fetch all playlist folders (once) and store them
 async function fetchPlaylists() {
-    let res = await fetch('/Spotify%20Clone/songs/');
+    let res = await fetch('/songs/');
     let html = await res.text();
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = html;
@@ -83,7 +83,7 @@ async function getsongs(folder) {
     currFolder = folder;
     songs = []; //  Clear old songs to avoid mixing albums
 
-    let a = await fetch(`/Spotify%20Clone/${folder}/`);
+    let a = await fetch(`/${folder}/`);
     let responce = await a.text();
 
     let div = document.createElement("div");
@@ -112,10 +112,10 @@ const playMusic = (track, pause = false) => {
 
     // Don't add folder if path is already complete
     let fullPath;
-    if (cleanTrack.startsWith("Spotify Clone/")) {
+    if (cleanTrack.startsWith("/")) {
         fullPath = "/" + cleanTrack;
     } else {
-        fullPath = `/Spotify Clone/${currFolder}/` + cleanTrack;
+        fullPath = `/${currFolder}/` + cleanTrack;
     }
 
     console.log("Trying to play:", fullPath);
@@ -134,7 +134,7 @@ const playMusic = (track, pause = false) => {
 async function displayAlbums() {
     console.log("Displaying albums...");
 
-    let res = await fetch('/Spotify%20Clone/songs/');
+    let res = await fetch('/songs/');
     let html = await res.text();
 
     let tempDiv = document.createElement("div");
@@ -149,7 +149,7 @@ async function displayAlbums() {
             let folder = decodeURIComponent(anchor.href.split("/").slice(-2)[0]);
 
             try {
-                let metaRes = await fetch(`/Spotify%20Clone/songs/${folder}/info.json`);
+                let metaRes = await fetch(`/songs/${folder}/info.json`);
                 let meta = await metaRes.json();
 
                 cardContainer.innerHTML += `
