@@ -1,0 +1,169 @@
+/* Dark scrollbar for WebKit-based browsers */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    /* Dark track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #444;
+    /* Dark gray thumb */
+    border-radius: 10px;
+    border: 2px solid #1e1e1e;
+    /* Match track background */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+    /* Lighter on hover */
+}
+
+:root{
+    --a:0;
+}
+
+
+.border {
+    border: 2px solid red;
+    margin: 3px;
+
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.item-center {
+    align-items: center;
+}
+
+.bg-black {
+    background-color: black;
+    color: white;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.bg-grey {
+    background-color: #212121;
+    color: white;
+}
+
+.rounded {
+    border-radius: 7px;
+}
+
+.m-1 {
+    margin: 5px;
+}
+
+.p-1 {
+    padding: 10px;
+}
+
+.header {
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(46, 45, 45);
+}
+
+.header>* {
+    padding: 20px;
+}
+
+.cardContainer {
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 88vh;
+    padding-bottom: 100px;
+
+}
+
+.card {
+    width: 160px;
+    justify-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(46, 45, 45);
+    position: relative;
+    justify-content: center;
+    transition: all 1s;
+
+}
+.card:hover{
+    background-color: rgb(36, 35, 35);
+    cursor: pointer;
+    --a: 1;
+}
+
+.card img {
+    width: 100%;
+    object-fit: contain;
+
+}
+
+.play-icon {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 140px;
+    right: 20px;
+    opacity: var(--a);
+    transition: all 1s ease-out;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.songbuttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    justify-items: center;
+
+
+}
+
+.songbuttons img {
+    height: 24px;
+    vertical-align: middle;
+    padding-bottom: 8px;
+
+
+}
+
+.center {
+    justify-content: center;
+    justify-items: center;
+}
+
+.musicSize {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+}
+.pointer{
+    cursor: pointer;
+}
+
+
