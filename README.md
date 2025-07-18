@@ -1,4 +1,4 @@
-# Spotify Clone - Web Music Player 🎧
+# Spotify Clone - Web Music Player 
 
 A responsive and fully frontend-based web music player inspired by Spotify. Built using **HTML**, **CSS**, and **JavaScript**, it dynamically loads songs and albums from local folders, displays album covers and metadata, and plays `.mp3` files directly in the browser.
 
@@ -6,7 +6,7 @@ A responsive and fully frontend-based web music player inspired by Spotify. Buil
 
 ##  Features
 
-### 🎵 Music Playback
+###  Music Playback
 - Play, pause, next, and previous song functionality
 - Real-time seekbar with duration and time display
 - Dynamic song list rendering
