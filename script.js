@@ -9,7 +9,7 @@ let currentPlaylistIndex = 0;
 
 // Fetch all playlist folders (once) and store them
 async function fetchPlaylists() {
-    let res = await fetch('http://127.0.0.1:3000/Spotify%20Clone/songs/');
+    let res = await fetch('/Spotify%20Clone/songs/');
     let html = await res.text();
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = html;
@@ -83,7 +83,7 @@ async function getsongs(folder) {
     currFolder = folder;
     songs = []; //  Clear old songs to avoid mixing albums
 
-    let a = await fetch(`http://127.0.0.1:3000/Spotify%20Clone/${folder}/`);
+    let a = await fetch(`/Spotify%20Clone/${folder}/`);
     let responce = await a.text();
 
     let div = document.createElement("div");
@@ -93,7 +93,7 @@ async function getsongs(folder) {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            let relativePath = decodeURIComponent(element.href.replace("http://127.0.0.1:3000/", ""));
+            let relativePath = decodeURIComponent(element.href.replace("/", ""));
             songs.push(relativePath);
         }
     }
@@ -134,7 +134,7 @@ const playMusic = (track, pause = false) => {
 async function displayAlbums() {
     console.log("Displaying albums...");
 
-    let res = await fetch('http://127.0.0.1:3000/Spotify%20Clone/songs/');
+    let res = await fetch('/Spotify%20Clone/songs/');
     let html = await res.text();
 
     let tempDiv = document.createElement("div");
@@ -149,7 +149,7 @@ async function displayAlbums() {
             let folder = decodeURIComponent(anchor.href.split("/").slice(-2)[0]);
 
             try {
-                let metaRes = await fetch(`http://127.0.0.1:3000/Spotify%20Clone/songs/${folder}/info.json`);
+                let metaRes = await fetch(`/Spotify%20Clone/songs/${folder}/info.json`);
                 let meta = await metaRes.json();
 
                 cardContainer.innerHTML += `
