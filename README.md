@@ -79,7 +79,6 @@ This is a portfolio-level frontend project made to simulate a music player like 
 ## 📧 Contact
 
 **Muhammad Ibraheem**  
-GitHub: [https://github.com/yourusername](https://github.com/yourusername)  
 LinkedIn: [www.linkedin.com/in/muhammadbraheem1230](https://www.linkedin.com/in/muhammadbraheem1230)
 
 
